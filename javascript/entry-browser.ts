@@ -16,7 +16,7 @@ function startThread4() {
   worker.postMessage({ threads: 4 } satisfies WorkerMessage)
 }
 
-function startProcessN(processes: number) {
+function startWorkerN(processes: number) {
   for (let processIndex = 0; processIndex < processes; processIndex++) {
     const worker = createWorker()
     worker.postMessage({ processIndex, processes } satisfies WorkerMessage)
@@ -32,6 +32,6 @@ function addButton(text: string, callback: VoidFunction) {
 
 addButton('Click to start 1 thread', startThread1)
 addButton('Click to start 4 threads', startThread4)
-addButton('Click to start 4 processes', () => startProcessN(4))
-addButton('Click to start 8 processes', () => startProcessN(8))
-addButton('Click to start 16 processes', () => startProcessN(16))
+addButton('Click to start 4 workers', () => startWorkerN(4))
+addButton('Click to start 8 workers', () => startWorkerN(8))
+addButton('Click to start 16 workers', () => startWorkerN(16))

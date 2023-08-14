@@ -45,14 +45,21 @@ $ pnpm run:node
 $ pnpm run:browser
 ```
 
-## Benchmark result
+## Benchmark result (M2 MacBook Air)
 
-| Environment                   | CPU usage | Time (seconds) |
-| ----------------------------- | --------- | -------------- |
-| Chrome - 1 worker - 1 thread  | 100%      | 300            |
-| Chrome - 1 worker - 4 threads | 100%      | 303            |
-| Chrome - 4 workers            | 400%      | 94             |
-| Chrome - 8 workers            | 700%      | 72             |
-| Chrome - 16 workers           | 700%      | 69             |
-| Node.js                       | 350%      | 33             |
-| Python                        | 300%      | 31             |
+| Environment                       | CPU usage | Time (seconds) |
+| --------------------------------- | --------- | -------------- |
+| Chrome - 1 worker                 | 100%      | 300            |
+| Chrome - 1 worker - 4 threads [1] | 100%      | 303            |
+| Chrome - 4 workers                | 400%      | 94             |
+| Chrome - 8 workers                | 700%      | 72             |
+| Chrome - 16 workers               | 700%      | 69             |
+| Safari - 1 worker                 | 100%      | 163            |
+| Safari - 1 worker - 4 threads [1] | 100%      | 162            |
+| Safari - 4 workers                | 400%      | 49             |
+| Safari - 8 workers [2]            | N/A       | N/A            |
+| Node.js                           | 350%      | 33             |
+| Python                            | 300%      | 31             |
+
+[1]: I cannot get multiple threads to work in Chrome
+[2]: Error: no available backend found. ERR: [wasm] RangeError: Out of memory
