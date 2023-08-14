@@ -1,0 +1,23 @@
+{
+  "name": "pkg-name",
+  "type": "module",
+  "version": "0.0.0",
+  "scripts": {
+    "run:python": "./venv/bin/python3 python/main.py",
+    "run:node": "esno javascript/entry-node.ts",
+    "run:browser": "vite"
+  },
+  "devDependencies": {
+    "@antfu/ni": "^0.21.5",
+    "@ocavue/eslint-config": "^1.2.3",
+    "@types/node": "^18.17.5",
+    "eslint": "^8.47.0",
+    "esno": "^0.17.0",
+    "prettier": "^3.0.1",
+    "typescript": "^5.1.6",
+    "vite": "^4.4.9"
+  },
+  "dependencies": {
+    "@xenova/transformers": "^2.5.1"
+  }
+}
