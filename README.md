@@ -61,6 +61,6 @@ $ pnpm run:browser
 | Node.js                           | 350%      | 33             |
 | Python                            | 300%      | 31             |
 
-[1]: I cannot get multiple threads to work in Chrome
+[1]: I cannot get multiple threads to work
 
 [2]: Error: no available backend found. ERR: [wasm] RangeError: Out of memory
