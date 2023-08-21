@@ -9,8 +9,19 @@ def read_file():
 
 def split_evenly(paragraphs: List[str]) -> List[List[str]]:
     chunks: List[List[str]] = []
-    for i in range(0, len(paragraphs), 10):
-        chunks.append(paragraphs[i:i+10])
+    n = len(paragraphs)
+    i = 0
+
+    while i < n:
+        words = 0
+        chunk = []
+        
+        while i < n and words < 650:
+            chunk.append(paragraphs[i])
+            words += len(paragraphs[i].split())
+            i += 1
+        chunks.append(chunk)
+
     return chunks
 
 
@@ -40,7 +51,7 @@ def write_chunks(chunks: List[List[str]], filename: str):
 def main():
     text = read_file()
     print('characters', len(text))
-    print('words', len(text.split(" ")))
+    print('words', len(text.split()))
     paragraphs = text.split("\n\n")
     print('paragraphs', len(paragraphs))
 
